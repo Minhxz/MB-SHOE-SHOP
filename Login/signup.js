@@ -18,12 +18,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
+let signup= document.querySelector('#signup')
 
 
 signup.addEventListener('click', (e) => {
     let email = document.getElementById('email').value;
-    let password = document.getElementById('password1').value;
-    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
 
 
     createUserWithEmailAndPassword(auth, email, password)
@@ -31,7 +31,6 @@ signup.addEventListener('click', (e) => {
             // Signed in 
             const user = userCredential.user;
             set(ref(database, 'users/' + user.uid), {
-                username: username,
                 email: email,
 
             })
