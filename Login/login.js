@@ -17,6 +17,8 @@ const database = getDatabase(app);
 const auth = getAuth();
 
 
+let signin= document.querySelector('#signin')
+
 signin.addEventListener('click', (e) => {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
